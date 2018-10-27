@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AlcoDrinks</title>
+<meta name="description" content="Online calculator AlcoDrinks on correct determination of volatile compounds, including ethanol, in alcohol products">
+<meta name="keywords" content="calculator, gas chromatography, ethanol, internal standard">
+<meta name="robots" content="index, follow">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/calculator.css" media="all">
+<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="js/numeral.min.js" type="text/javascript"></script>
+<script src="js/jquery-calx-2.0.3.min.js" type="text/javascript"></script>
+<script src="js/react.min.js" type="text/javascript"></script>
+<script src="js/react-dom.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/react-with-addons.min.js" type="text/javascript"></script>
+<script src="js/math.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/main-page.css" media="all">
+
+
+<body>
+
+
+
+
+
+
+	<h15 id="Header"><nav class="navbar navbar-inverse">
+  <div  class="container-fluid">
+    <ul class="nav navbar-nav">
+				<li class="first-item">
+				<i class="Calculator"></i>
+				<a href="#Calculator"><h11>Calculator AlcoDrinks</h11></a>
+				</li>
+				<li>
+				<i class="Theory"></i>
+				<a href="#Theory"><h11>Theoretical background and calculation</h11></a>
+				</li>
+				<li>
+				<i class="RRF"></i>
+				<a href="#RRF"><h11>Determination of coefficients RRF</h11></a>
+				</li>
+				<li>
+				<i class="Concentration"></i>
+				<a href="#Concentration"><h11>Determination of concentrations</h11></a>
+				</li>
+				<li>
+				<i class="References"></i>
+				<a href="#References"><h11>References</h11></a>
+				</li>
+    </ul>
+  </div>
+</nav></h15>
+
+
+
+
+
+<div id="calc_desc">
+<h21 p> AlcoDrinks is online calculator on correct determination of volatile compounds in alcohol products</h21>
+<h2 p> Using this calculator, you can perform a quantitative determination of the content of volatile compounds, using ethanol as internal standard.</p></h2>
+<h2 p> You should only specify the value of the area under the peaks of the analyzed compound and ethanol. 
+As a result, you will immediately receive the concentration of analyzed compound in mg per liter of absolute alcohol (AA). 
+Given values RRF ​​are approximate. For more accurate results, you should enter the improved values ​​for the calculation of RRF, corresponding to your gas chromatography.	
+
+<p></h2></div>	
+
+
+
+	
+		<h2 id="samplename" b><i>Name of the sample:</i></b><br><textarea rows="1" cols="70" id="sample_name">Sample - CRM LGC5100 Whisky-Congeners</textarea></h2>
+		<div id="react"><a name="react"></a>
+	<div id="root"></div>
+</div></a>
+<script src="js/calculator.js" type="text/javascript"></script>
+<script>
+$('#sheet').calx({
+    autoCalculateTrigger : 'keyup',
+    checkCircularReference : true
+});
+</script>
+
+
+
+
+
+<div id="next">
+	<h3 id="Subheader"><a name="Theory"></a>Theoretical background and calculation</h3>
+	<div class="comment">
+		<h2 p>Concentration of the volatile compounds in alcohol products should be presented in mg per 1 liter of anhydrous alcohol (Absolute Alcohol - AA) in strict accordance with the regulations documents of OIV, Commission Regulation (EC) and AOAC Official Methods /1-4/. The mass concentration of ethanol in anhydrous alcohol (AA) is well known and its density is 789300 mg/L (AA). Since ethanol is present in the sample and its concentration in the anhydrous alcohol is well known, for quantitative calculation of the volatiles should use the method of internal standard (IS).<br>The value of the concentration of the <i>i-th</i> volatile compound of the test sample may be written by the following formula:</p></h2><br>
+		<div id="formula1">
+		  <center>
+		    <table border="0" width="60%">
+		      <tr>
+		        <td align="center"><a href="eisf1_small.png" onclick="return hs.expand(this)"><img src="eisf1.png"></a></td>
+		        <td align="right">
+							<strong>(1)</strong>
+						</td>
+		      </tr>
+		    </table>
+		  </center>
+		</div>
+		<div id="formula2">
+		  <center>
+		    <table border="0" width="60%">
+		      <tr>
+		        <td align="center"><a href="eisf2_small.png" onclick="return hs.expand(this)"><img src="eisf2.png"></a></td>
+		            <td align="right"><strong>(2)</strong></td>
+		        </tr>
+		    </table>
+		  </center>
+		</div>
+  <h2><br><p>where<strong><i>C<sub>IS</sub></i></strong> is the concentration of IS in the test sample; <strong><i>A<sub>i</sub></i></strong> and <strong><i>A<sub>IS</sub></i></strong> are peak areas of the <i>i-th</i> component and IS in the test sample; respectively, <strong><i>RF<sub>i</sub></i></strong> and <strong><i>RF<sub>IS</sub></i></strong> are coefficients of the detector response of <i>i-th</i> component and of IS in the standard working solution, respectively; <strong><i>C<sup>st</sup><sub>i</sub></i></strong> and <strong><i>C<sup>st</sup><sub>IS</sub></i></strong> are the concentrations of the <i>i-th</i> component and IS, respectively, expressed in mg per 1 liter of AA; <strong><i>A<sup>st</sup><sub>i</sub></i></strong> and <strong><i>C<sup>st</sup><sub>IS</sub></i></strong> the peak area of the <i>i-th</i> component and IS, respectively, in the standard working solution; <strong><i>RRF<sub>i</sub></i></strong> is relative response factor for the <i>i-th</i> component relative to IS.<br>
+		Since in this case ethanol is the IS then <strong><i>C<sup>st</sup><sub>ethanol</sub></i></strong> = <strong><i>&#961<sub>ethanol</sub></i> = 789300 mg/L</strong> is the value of the density of ethanol and the expressions <strong>(1)</strong> and <strong>(2)</strong> may be represented as follows /5/</p><br></h2>
+		<div id="formula3">
+		  <center>
+		    <table border="0" width="60%">
+		      <tr>
+		        <td align="center">
+		        	<td align="center"><a href="eisf3_small.png" onclick="return hs.expand(this)"><img src="eisf3.png"></a></td>
+		        </td>
+		            <td align="right"><strong>(3)</strong></td>
+		        </tr>
+		    </table>
+		  </center>
+		</div>
+		<div id="formula4">
+		  <center>
+		    <table border="0" width="60%">
+		      <tr>
+		        <td align="center"><a href="eisf4_small.png" onclick="return hs.expand(this)"><img src="eisf4.png"></a></td>
+		            <td align="right"><strong>(4)</strong></td>
+		        </tr>
+		    </table>
+		  </center>
+		</div>
+  <br><h2 p>where <strong><i>A<sup>st</sup><sub>ethanol</sub></i></strong> and <strong><i>A<sub>ethanol</sub></i></strong> are the peak areas of ethanol in the standard solution and in the test sample, respectively.</p><br>
+		<p>It should be noted that in the expression <strong>(3)</strong> there are not parameters such as:</p></h2>
+		<h5><ul>
+			<li><p>name (kind/type) of sample</p></li>
+			<li><p>injection value</p></li>
+			<li><p>split ratio</p></li>
+			<li><p>values of air and hydrogen flows for flame-ionization detector (FID)</p></li>
+			<li><p>model, technical characteristics and methodic parameters of used gas chromatograph (GC)</p></li>
+			<li><p>volume concentration (v/v) of ethanol (strength) in sample</p></li>
+			<li><p>name of IS</p></li>
+			<li><p>quantity of injected IS</p></li></h5>
+		</ul>
+
+	</div>
+</div>
+
+
+
+
+
+<p>
+<div id="bottom_block">
+	<h3 id="Subheader"><a name="RRF"></a>Determination of coefficients RRF</h3>
+	<h2 p>Values of coefficients <strong>RRF</strong> are calculated on experimental data of standard solutions with known values of concentration of volatile compounds
+	by formula <strong>(4)</strong>.</p></h2>
+	<center>
+			<h8 class="tablename">
+					<strong>Table 1.</strong> Results of determination of coefficients 
+					<strong>RRF</strong> on experimental data presented in 
+					<strong>Figure 1</strong>
+				</h8>
+	</center>
+	<h7>
+		<figure>
+			<img class="fig" src="table1.png" align="center" width="616px" height="250px">
+		 </figure>
+	</h7>
+<p>
+  <h3 id="Subheader"><a name="Concentration"></a>Determination of concentrations of volatile compounds in the sample</h3>
+	<h2 p>Determination of concentrations of volatile compounds in test sample is performed in accordance with equation <strong>(3)</strong>.</p></h2>
+	<center>
+			<h8 class="tablename">
+					<strong>Table 2.</strong> Experimental data and data from 
+					<a href="crm-lgc5100-whisky-congeners.pdf" target="_blank"> certificate </a>
+					<strong>CRM LGC5100 Whisky - Congeners</strong>
+				</h8>
+	</center>	
+    <h7><figure>
+        <img  class="fig" src="table2.png" textalign="center" width="1000px" height="230px">
+       </figure></h7>
+
+
+
+			 
+  <h2 p>Peak area of analyzing volatile compounds are recorded in <strong>Table 2</strong> in arbitrary units, for example, in <i>"mV * min"</i> or in <i>"pA * s"</i>.</p>
+  <p>The bias between the values of the concentrations from the certificate and the experimentally measured are not more than 12.0% relative.</p>
+</div>	</h2>
+<div id="chromatograms">
+  <h7><figure>
+			<td align="center"><img src="chrm1.png"  align="center" height="50%" width="50%" alt="Fig. 1. An example of chromatograms of standard working solution of volatile compounds in ethanol."></td>
+            <figcaption><a href="chrm1.png" target="_blank"><p>Figure 1. An example of chromatograms of standard working solution of volatile compounds in ethanol.</p></a></figcaption>
+          </figure>
+          <figure>
+							<td align="center"><img  class="fig" src="chrm2.png" align="center" height="50%" width="50%" alt="Fig. 2. Chromatogram of the certified reference sample CRM LGC5100 Whisky - Congeners in logarithmic scale."></td>
+            <figcaption><a href="chrm2.png" target="_blank"><p>Figure 2. Chromatogram of the certified reference sample CRM LGC5100 Whisky - Congeners in a logarithmic scale.</p></a></figcaption>
+          </figure>
+          <figure>
+							<td align="center"> <img  class="fig" src="chrm3.png"  align="center" height="50%" width="50%" alt="Fig. 3. Chromatogram of the certified reference sample CRM LGC5100 Whisky - Congeners in linear scale."></td>
+            <figcaption><a href="chrm3.png" target="_blank"><p>Figure 3. Chromatogram of the certified reference sample CRM LGC5100 Whisky - Congeners in linear scale.</p></a></figcaption>
+          </figure>
+          <figure>
+							<td align="center"> <img  class="fig" src="chrm4.png" align="center"  height="50%" width="50%" alt="Fig. 4. Chromatogram of the second measurement of the sample CRM LGC5100 Whisky - Congeners."></td>
+            <figcaption><a href="chrm4.png" target="_blank"><p>Figure 4. Chromatogram of the second measurement of the sample CRM LGC5100 Whisky - Congeners.</p></a></figcaption>
+          </figure></h7>
+</div>
+
+
+
+
+
+
+
+<div id="references">
+	<h3 id="Subheader"><a name="References"></a>References</h3>
+	<ol>
+		<h5><li>International Organization of Vine and Wine (OIV). Compendium of international methods of wine and must analysis, 2009; Vols. 1 and 2.</li></h5>
+    <h5><li>Commission Regulation (EC) No 2870/2000 of 19 December 2000 laying down Community reference methods for the analysis of spirits drinks, 2000.</li></h5>
+			<h5><li>AOAC (Association of Official Analytical Chemists) Official Methods 972.10. Alcohol (higher) and ethyl acetate in distilled liquors. Alternative gas chromatographic method, 1975.</li></h5>
+			<h5><li>AOAC Official Methods 972.11. Methanol in distilled liquors. Gas chromatographic method, 1973.</li>
+			<h5><li>Charapitsa S.V. et al. Direct Determination of Volatile Compounds in Spirit Drinks by Gas Chromatography. J. Agricultural and Food Chemistry, 2013, 61 (12), 2950–2956
+<a href="http://www.pubs.acs.org/doi/abs/10.1021/jf3044956"> DOI:10.1021/jf3044956</A>. </li></h5>
+  
+	</ol>
+</div>
+</div>
+<p>
+	<h6>©2018 <a href="http://inp.bsu.by/english/index_en.htm" target="_blank">INP</a></h6>
+</body>
+
+</html>
